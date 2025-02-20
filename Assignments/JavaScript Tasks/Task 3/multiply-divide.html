@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiply or Divide</title>
+<style>
+  label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+  }
+  input[type="text"] {
+    display: inline-block;
+    width: 80px;
+  }
+  #result {
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Multiply or Divide</h1>
+
+<label for="num1">1st Number:</label>
+<input type="text" id="num1"><br><br>
+
+<label for="num2">2nd Number:</label>
+<input type="text" id="num2"><br><br>
+
+<button onclick="calculate('multiply')">Multiply</button>
+<button onclick="calculate('divide')">Divide</button>
+
+<div id="result">The Result Is: </div>
+
+<script>
+function calculate(operation) {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+
+  let result;
+
+  if (operation === 'multiply') {
+    result = num1 * num2;
+  } else if (operation === 'divide') {
+    if (num2 === 0) {
+      result = "Cannot divide by zero!";
+    } else {
+      result = num1 / num2;
+    }
+  }
+
+  document.getElementById("result").textContent = "The Result Is: " + result;
+}
+</script>
+
+</body>
+</html>
