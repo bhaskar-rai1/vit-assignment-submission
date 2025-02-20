@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GIF Player</title>
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+#gif-container {
+  max-width: 500px;  
+  max-height: 500px;
+}
+
+#my-gif {
+  display: block;
+  margin: 0 auto;
+}
+
+#controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: blue;
+  text-align: center;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div id="gif-container">
+  <img id="my-gif" src="JavaScript Tasks\Task 7\train-gif.gif" alt="GIF Image">  </div>
+
+<h2>Click the following buttons to handle animation</h2>
+
+<div id="controls">
+  <button onclick="startGIF()">Start</button>
+  <button onclick="stopGIF()">Stop</button>
+</div>
+
+<script>
+const gifImage = document.getElementById('my-gif');
+
+function startGIF() {
+  gifImage.src = "JavaScript Tasks\Task 7\train-gif.gif";
+}
+
+function stopGIF() {
+  gifImage.src = "";
+}
+</script>
+
+</body>
+</html>
